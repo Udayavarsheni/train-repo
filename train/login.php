@@ -50,7 +50,7 @@ if(isset($_POST['submit']))
 		$user=$_POST['username'];
 		$sql="SELECT name,password FROM usermaster where name='$user' AND password='$pass'" ;
 		$result=$conn->query($sql);
-		if($result)
+		if($result->num_rows>0)
 		{
 			echo "Welcome!!. ".$user;
 			session_start();
